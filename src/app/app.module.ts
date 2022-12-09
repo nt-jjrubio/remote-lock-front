@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { ClientsModule } from './clients/clients.module';
+import { RemoteLockService } from './services/remote-lock.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,13 @@ import { RippleModule } from 'primeng/ripple';
     BrowserAnimationsModule,
     PanelModule,
     ButtonModule,
-    RippleModule
+    RippleModule,
+    ClientsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RemoteLockService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

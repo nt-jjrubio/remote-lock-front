@@ -1,0 +1,12 @@
+<div class="clients">
+  <p-card *ngFor="let client of clients" [style]="{'padding': '10px'}">
+    <div class="client">
+      <div>{{client['address']}}</div>
+      <div [ngSwitch]="client['os']">
+        <i *ngSwitchCase="'Linux'" class="fa-brands fa-linux"></i>
+      </div>
+      <div><p-button icon="pi pi-lock" (onClick)="lockClient(client['id'])"></p-button></div>
+    </div>
+
+  </p-card>
+</div>
